@@ -87,12 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Visual Novel",
       description: "A gripping visual novel about choices and consequences.",
       images: [
-        "/assets/uym.png",
-        "/assets/uym1.png",
-        "/assets/uym2.png",
-        "/assets/uym3.png",
-        "/assets/uym4.png",
-        "/assets/uym5.png"
+        `${BASE_URL}/public/assets/uym.png`,
+        `${BASE_URL}/public/assets/uym1.png`,
+        `${BASE_URL}/public/assets/uym2.png`,
+        `${BASE_URL}/public/assets/uym3.png`,
+        `${BASE_URL}/public/assets/uym4.png`,
+        `${BASE_URL}/public/assets/uym5.png`
       ]
     },
     "gta": {
@@ -101,12 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Open-World",
       description: "Grand Theft Auto V Enhanced, best game.",
       images: [
-        "/assets/gta.webp",
-        "/assets/gta1.jpg",
-        "/assets/gta2.jpg",
-        "/assets/gta3.jpg",
-        "/assets/gta4.jpg",
-        "/assets/gta5.jpg",
+        `${BASE_URL}/public/assets/gta.webp`,
+        `${BASE_URL}/public/assets/gta1.jpg`,
+        `${BASE_URL}/public/assets/gta2.jpg`,
+        `${BASE_URL}/public/assets/gta3.jpg`,
+        `${BASE_URL}/public/assets/gta4.jpg`,
+        `${BASE_URL}/public/assets/gta5.jpg`,
       ]
     },
     "peak": {
@@ -115,12 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Exploration",
       description: "Reach the peak!!!",
       images: [
-        "/assets/peak.webp",
-        "/assets/peak1.png",
-        "/assets/peak2.png",
-        "/assets/peak3.png",
-        "/assets/peak4.png",
-        "/assets/peak5.png"
+        `${BASE_URL}/public/assets/peak.webp`,
+        `${BASE_URL}/public/assets/peak1.png`,
+        `${BASE_URL}/public/assets/peak2.png`,
+        `${BASE_URL}/public/assets/peak3.png`,
+        `${BASE_URL}/public/assets/peak4.png`,
+        `${BASE_URL}/public/assets/peak5.png`
       ]
     },
     "summertime-saga": {
@@ -129,10 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Visual Novel",
       description: "A coming-of-age dating sim with a twist.",
       images: [
-        "/assets/sts.png",
-        "/assets/sts1.jpg",
-        "/assets/sts2.jpg",
-        "/assets/sts3.webp"
+        `${BASE_URL}/public/assets/sts.png`,
+        `${BASE_URL}/public/assets/sts1.jpg`,
+        `${BASE_URL}/public/assets/sts2.jpg`,
+        `${BASE_URL}/public/assets/sts3.webp`
       ]
     },
     "god-of-war": {
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Action",
       description: "Epic battles and mythological adventures in God of War.",
       images: [
-        "/assets/gow.jpg",
-        "/assets/gow1.jpg",
-        "/assets/gow2.jpg",
-        "/assets/gow3.jpg",
-        "/assets/gow4.jpg",
-        "/assets/gow5.jpg",
+        `${BASE_URL}/public/assets/gow.jpg`,
+        `${BASE_URL}/public/assets/gow1.jpg`,
+        `${BASE_URL}/public/assets/gow2.jpg`,
+        `${BASE_URL}/public/assets/gow3.jpg`,
+        `${BASE_URL}/public/assets/gow4.jpg`,
+        `${BASE_URL}/public/assets/gow5.jpg`,
       ]
     },
     "Songsilk": {
@@ -155,11 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Metroidvania",
       description: "The long awaited Knight Hollow Songsilk.",
       images: [
-        "/assets/silksong.jpg",
-        "/assets/silksong1.webp",
-        "/assets/silksong2.jpg",
-        "/assets/silksong3.jpg",
-        "/assets/silksong4.jpg"
+        `${BASE_URL}/public/assets/silksong.jpg`,
+        `${BASE_URL}/public/assets/silksong1.webp`,
+        `${BASE_URL}/public/assets/silksong2.jpg`,
+        `${BASE_URL}/public/assets/silksong3.jpg`,
+        `${BASE_URL}/public/assets/silksong4.jpg`
       ]
     },
     "conter-strik": {
@@ -168,10 +168,10 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "FPS",
       description: "Hello am 48 year man from somalia. Sorry for my bed england. I selled my wife for internet connection for play \"conter strik\" and i want to become the goodest player like you I play with 400 ping on brazil and i am global elite 2. pls no copy pasterio my story",
       images: [
-        "/assets/cs.jpg",
-        "/assets/cs1.jpg",
-        "/assets/cs2.jpg",
-        "/assets/cs3.jpg"
+        `${BASE_URL}/public/assets/cs.jpg`,
+        `${BASE_URL}/public/assets/cs1.jpg`,
+        `${BASE_URL}/public/assets/cs2.jpg`,
+        `${BASE_URL}/public/assets/cs3.jpg`
       ]
     },
     "ddlc": {
@@ -180,12 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
       genre: "Visual Novel",
       description: "You kind of left her hanging this morning, you know?",
       images: [
-        "/assets/ddlc.png",
-        "/assets/ddlc1.jpg",
-        "/assets/ddlc2.jpg",
-        "/assets/ddlc3.jpg",
-        "/assets/ddlc4.jpg",
-        "/assets/ddlc5.jpg"
+        `${BASE_URL}/public/assets/ddlc.png`,
+        `${BASE_URL}/public/assets/ddlc1.jpg`,
+        `${BASE_URL}/public/assets/ddlc2.jpg`,
+        `${BASE_URL}/public/assets/ddlc3.jpg`,
+        `${BASE_URL}/public/assets/ddlc4.jpg`,
+        `${BASE_URL}/public/assets/ddlc5.jpg`
       ]
     }
   };
@@ -311,11 +311,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function goToPage(pageName) {
     const routes = {
-      home: "/",
-      products: "/products",
-      about: "/about",
-      contact: "/contact",
-      cart: "/cart"
+      home: `${BASE_URL}/html/pages/home.php`,
+      products: `${BASE_URL}/html/pages/products.php`,
+      about: `${BASE_URL}/html/pages/about.php`,
+      contact: `${BASE_URL}/html/pages/contact.php`,
+      cart: `${BASE_URL}/html/pages/cart.php`
     };
 
     const target = routes[pageName.toLowerCase()];
