@@ -100,9 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!local || !domain) return false;
 
     if (!/^[A-Za-z0-9](?:[A-Za-z0-9._-]*[A-Za-z0-9])?$/.test(local)) return false;
-    if (!/^[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/.test(domain)) return false;
+
+    if (!/^[A-Za-z0-9-]+\.[A-Za-z]{2,3}$/.test(domain)) return false;
+
+    //this domain allows subdomains, top one does not
+    //if (!/^[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$/.test(domain)) return false;
 
     const labels = domain.split('.');
+    if (labels.length !== 2) return false; //comment out if allowing subdomains
     for (const label of labels) {
       if (label.length === 0) return false;
       if (!/[A-Za-z0-9]/.test(label)) return false;
@@ -672,6 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const $confirm = $('#signup-confirm');
 
     restrictToEmail($email);
+    restrictToText($name);
     restrictToDigits($contact);
 
     $form.validate({
@@ -1042,6 +1048,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function restrictToDigits($el) {
     $el.on('keypress', e => {
       if (!/[0-9]/.test(String.fromCharCode(e.which))) e.preventDefault();
+    });
+  }
+
+  function restrictToText($el) {
+    $el.on('keypress', e => {
+      if (!/^[\p{L} ]$/u.test(String.fromCharCode(e.which))) e.preventDefault();
     });
   }
 
