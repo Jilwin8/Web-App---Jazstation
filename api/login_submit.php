@@ -18,10 +18,13 @@ try {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password_hash'])) {
-        // Optionally start a session here
+
+        /*
+        // start a session here
         session_start();
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['full_name'];
+        */
 
         echo json_encode([
             'success' => true,
