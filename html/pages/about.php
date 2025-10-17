@@ -14,7 +14,7 @@
       <div class="container py-5">
         <div class="row align-items-center">
           <div class="col-md-6 mb-4 mb-md-0">
-            <img src="./assets/header.png" class="img-fluid rounded shadow" alt="About JazStation">
+            <img src="../../public/assets/header.png" class="img-fluid rounded shadow" alt="About JazStation">
           </div>
           <div class="col-md-6">
             <h2 class="mb-3 fw-bold text-primary">About JazStation</h2>
@@ -29,7 +29,10 @@
           </div>
         </div>
         <!-- Creators NYEHEHEHEHE -->
-        <div class="mt-5">
+
+        <!-- PAKIAYOS this part please. -->
+
+        <!-- <div class="mt-5">
           <h3 class="text-center fw-bold mb-4 text-primary">Meet the Creators</h3>
           <div class="row justify-content-center g-4">
             <div class="col-12 col-md-5 d-flex flex-column align-items-center">
@@ -51,7 +54,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
