@@ -6,7 +6,6 @@ header('Content-Type: application/json');
 $email = $_POST['login-email'] ?? '';
 $password = $_POST['login-password'] ?? '';
 
-// additional validation for backend to db to not fk up the table :DDD
 if (empty($email) || empty($password)) {
     echo json_encode(['success' => false, 'message' => 'Missing email or password']);
     exit;
@@ -18,14 +17,14 @@ try {
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password_hash'])) {
-
-        /*
-        // start a session here
+        // START SESSION AND SAVE USER INFO
         session_start();
+
+        // Put user info into the session so other pages can see it
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['full_name'];
-        */
 
+        // Also return JSON for your AJAX front-end
         echo json_encode([
             'success' => true,
             'name' => $user['full_name'],

@@ -528,27 +528,38 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Add to Cart from Overview Modal
-    if (overviewAddToCart) {
-      overviewAddToCart.onclick = () => {
-        if (!currentOverviewProductId) return;
-        const data = productData[currentOverviewProductId];
-        if (!data) return;
-        const existing = cart.find(item => item.name === data.name);
-        if (existing) {
-          existing.qty += 1;
-        } else {
-          cart.push({ name: data.name, price: data.price, img: data.images[0], qty: 1 });
-        }
-        renderCart();
-        goToPage("cart");
-
-        if (window.bootstrap && window.bootstrap.Modal) {
-          const modal = bootstrap.Modal.getInstance(overviewModal);
-          if (modal) modal.hide();
-        }
-      };
-    }
+        // Add to Cart from Overview Modal
+        if (overviewAddToCart) {
+          overviewAddToCart.onclick = () => {
+            // Check if the user is logged in
+            if (!window.isLoggedIn) {
+              // If not logged in, open the login modal instead
+              if (window.bootstrap && window.bootstrap.Modal) {
+                const loginModal = bootstrap.Modal.getOrCreateInstance(document.getElementById("loginModal"));
+                loginModal.show();
+              }
+              return; // Stop here — don’t add to cart
+            }
+    
+            // ✅ Normal Add to Cart logic if logged in
+            if (!currentOverviewProductId) return;
+            const data = productData[currentOverviewProductId];
+            if (!data) return;
+            const existing = cart.find(item => item.name === data.name);
+            if (existing) {
+              existing.qty += 1;
+            } else {
+              cart.push({ name: data.name, price: data.price, img: data.images[0], qty: 1 });
+            }
+            renderCart();
+            goToPage("cart");
+    
+            if (window.bootstrap && window.bootstrap.Modal) {
+              const modal = bootstrap.Modal.getInstance(overviewModal);
+              if (modal) modal.hide();
+            }
+          };
+        }    
   }
 
   function fetchGenres() {
@@ -650,6 +661,9 @@ document.addEventListener("DOMContentLoaded", () => {
               $('#login-email, #login-password').removeClass('is-invalid');
               showAlert("Successfully logged in as user: " + response.name + "\nid: " + response.id, "success", 10000);
               bootstrap.Modal.getInstance(document.getElementById('loginModal'))?.hide();
+
+                // 🔥 Add this line to reload the page after successful login
+              setTimeout(() => location.reload(), 800); // small delay so alert shows first
             } else {
               console.log(response.message);
               $invalid.show().text('Invalid email or password.');
